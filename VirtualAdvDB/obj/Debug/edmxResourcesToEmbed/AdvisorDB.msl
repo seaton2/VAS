@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VAS_2ModelStoreContainer" CdmEntityContainer="VAS_2Entities">
+    <FunctionImportMapping FunctionImportName="addUserClass" FunctionName="VAS_2Model.Store.addUserClass" />
+    <FunctionImportMapping FunctionImportName="collegesByUniv" FunctionName="VAS_2Model.Store.collegesByUniv" />
+    <FunctionImportMapping FunctionImportName="coursesByMajor" FunctionName="VAS_2Model.Store.coursesByMajor" />
+    <FunctionImportMapping FunctionImportName="majorsByCollege" FunctionName="VAS_2Model.Store.majorsByCollege" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="VAS_2Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="VAS_2Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="VAS_2Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="VAS_2Model.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="VAS_2Model.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="VAS_2Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="VAS_2Model.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="AddClass" FunctionName="VAS_2Model.Store.AddClass" />
+    <FunctionImportMapping FunctionImportName="AddMajor" FunctionName="VAS_2Model.Store.AddMajor" />
+    <FunctionImportMapping FunctionImportName="sp_getImage" FunctionName="VAS_2Model.Store.sp_getImage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VAS_2Model.sp_getImage_Result">
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="updateUserDetail" FunctionName="VAS_2Model.Store.updateUserDetail" />
+    <EntitySetMapping Name="Class_List">
+      <EntityTypeMapping TypeName="VAS_2Model.Class_List">
+        <MappingFragment StoreEntitySet="Class_List">
+          <ScalarProperty Name="Major_ID" ColumnName="Major_ID" />
+          <ScalarProperty Name="College_ID" ColumnName="College_ID" />
+          <ScalarProperty Name="CIP_Code" ColumnName="CIP_Code" />
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="Class_Description" ColumnName="Class_Description" />
+          <ScalarProperty Name="Class_Name" ColumnName="Class_Name" />
+          <ScalarProperty Name="Class_Code" ColumnName="Class_Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class_Review">
+      <EntityTypeMapping TypeName="VAS_2Model.Class_Review">
+        <MappingFragment StoreEntitySet="Class_Review">
+          <ScalarProperty Name="Posting_Date" ColumnName="Posting_Date" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Review_ID" ColumnName="Review_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colleges">
+      <EntityTypeMapping TypeName="VAS_2Model.College">
+        <MappingFragment StoreEntitySet="College">
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="College_Name_General" ColumnName="College_Name_General" />
+          <ScalarProperty Name="College_ID" ColumnName="College_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Internships">
+      <EntityTypeMapping TypeName="VAS_2Model.Internship">
+        <MappingFragment StoreEntitySet="Internships">
+          <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Pay" ColumnName="Pay" />
+          <ScalarProperty Name="Time_Frame" ColumnName="Time_Frame" />
+          <ScalarProperty Name="Internship_Title" ColumnName="Internship_Title" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Internship_ID" ColumnName="Internship_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maj_Req">
+      <EntityTypeMapping TypeName="VAS_2Model.Maj_Req">
+        <MappingFragment StoreEntitySet="Maj_Req">
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Degree_ID" ColumnName="Degree_ID" />
+          <ScalarProperty Name="Maj_Req_ID" ColumnName="Maj_Req_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Major_Flowchart">
+      <EntityTypeMapping TypeName="VAS_2Model.Major_Flowchart">
+        <MappingFragment StoreEntitySet="Major_Flowchart">
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="contentType" ColumnName="contentType" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="Chart_ID" ColumnName="Chart_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors">
+      <EntityTypeMapping TypeName="VAS_2Model.Major">
+        <MappingFragment StoreEntitySet="Majors">
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="DegreeTypes" ColumnName="DegreeTypes" />
+          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+          <ScalarProperty Name="MajorName" ColumnName="MajorName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors_by_University">
+      <EntityTypeMapping TypeName="VAS_2Model.Majors_by_University">
+        <MappingFragment StoreEntitySet="Majors_by_University">
+          <ScalarProperty Name="Chart_ID" ColumnName="Chart_ID" />
+          <ScalarProperty Name="College_ID" ColumnName="College_ID" />
+          <ScalarProperty Name="College_Name" ColumnName="College_Name" />
+          <ScalarProperty Name="CIP_Code" ColumnName="CIP_Code" />
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="Degree_ID" ColumnName="Degree_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majors_Code">
+      <EntityTypeMapping TypeName="VAS_2Model.Majors_Code">
+        <MappingFragment StoreEntitySet="Majors_Code">
+          <ScalarProperty Name="Major_Name" ColumnName="Major_Name" />
+          <ScalarProperty Name="CIP_Code" ColumnName="CIP_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="VAS_2Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities">
+      <EntityTypeMapping TypeName="VAS_2Model.University">
+        <MappingFragment StoreEntitySet="Universities">
+          <ScalarProperty Name="Cname" ColumnName="Cname" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Out_State_Tuition" ColumnName="Out_State_Tuition" />
+          <ScalarProperty Name="In_State_Tuition" ColumnName="In_State_Tuition" />
+          <ScalarProperty Name="UNIV_URL" ColumnName="UNIV_URL" />
+          <ScalarProperty Name="UNIV_Phone" ColumnName="UNIV_Phone" />
+          <ScalarProperty Name="UNIV_ZIP" ColumnName="UNIV_ZIP" />
+          <ScalarProperty Name="UNIV_State" ColumnName="UNIV_State" />
+          <ScalarProperty Name="UNIV_City" ColumnName="UNIV_City" />
+          <ScalarProperty Name="UNIV_Address" ColumnName="UNIV_Address" />
+          <ScalarProperty Name="UNIV_Alias" ColumnName="UNIV_Alias" />
+          <ScalarProperty Name="UNIV_Name" ColumnName="UNIV_Name" />
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="University_Category">
+      <EntityTypeMapping TypeName="VAS_2Model.University_Category">
+        <MappingFragment StoreEntitySet="University_Category">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Classes">
+      <EntityTypeMapping TypeName="VAS_2Model.User_Classes">
+        <MappingFragment StoreEntitySet="User_Classes">
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Major_ID" ColumnName="Major_ID" />
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="Posting_Date" ColumnName="Posting_Date" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Review_ID" ColumnName="Review_ID" />
+          <ScalarProperty Name="Grade_Points" ColumnName="Grade_Points" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="User_Class_ID" ColumnName="User_Class_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Images">
+      <EntityTypeMapping TypeName="VAS_2Model.User_Images">
+        <MappingFragment StoreEntitySet="User_Images">
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="contentType" ColumnName="contentType" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="User_Image_ID" ColumnName="User_Image_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="VAS_2Model.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Goal" ColumnName="Goal" />
+          <ScalarProperty Name="User_Image_path" ColumnName="User_Image_path" />
+          <ScalarProperty Name="Major_ID" ColumnName="Major_ID" />
+          <ScalarProperty Name="UNIV_ID" ColumnName="UNIV_ID" />
+          <ScalarProperty Name="Level_of_Education" ColumnName="Level_of_Education" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PW" ColumnName="PW" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserImages">
+      <EntityTypeMapping TypeName="VAS_2Model.UserImage">
+        <MappingFragment StoreEntitySet="UserImages">
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="contentType" ColumnName="contentType" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="User_Image_ID" ColumnName="User_Image_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

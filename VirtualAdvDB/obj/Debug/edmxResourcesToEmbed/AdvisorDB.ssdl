@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VAS_2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VAS_2ModelStoreContainer">
+    <EntitySet Name="Class_List" EntityType="VAS_2Model.Store.Class_List" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Class_Review" EntityType="VAS_2Model.Store.Class_Review" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="College" EntityType="VAS_2Model.Store.College" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Internships" EntityType="VAS_2Model.Store.Internships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Maj_Req" EntityType="VAS_2Model.Store.Maj_Req" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Major_Flowchart" EntityType="VAS_2Model.Store.Major_Flowchart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Majors" EntityType="VAS_2Model.Store.Majors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Majors_by_University" EntityType="VAS_2Model.Store.Majors_by_University" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Majors_Code" EntityType="VAS_2Model.Store.Majors_Code" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="VAS_2Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Universities" EntityType="VAS_2Model.Store.Universities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="University_Category" EntityType="VAS_2Model.Store.University_Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User_Classes" EntityType="VAS_2Model.Store.User_Classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User_Images" EntityType="VAS_2Model.Store.User_Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDetail" EntityType="VAS_2Model.Store.UserDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserImages" EntityType="VAS_2Model.Store.UserImages" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Class_List_College" Association="VAS_2Model.Store.FK_Class_List_College">
+      <End Role="College" EntitySet="College" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Majors" Association="VAS_2Model.Store.FK_Class_List_Majors">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Majors_Code" Association="VAS_2Model.Store.FK_Class_List_Majors_Code">
+      <End Role="Majors_Code" EntitySet="Majors_Code" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Universities" Association="VAS_2Model.Store.FK_Class_List_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_College_Universities" Association="VAS_2Model.Store.FK_College_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="College" EntitySet="College" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maj_Req_Class_List" Association="VAS_2Model.Store.FK_Maj_Req_Class_List">
+      <End Role="Class_List" EntitySet="Class_List" />
+      <End Role="Maj_Req" EntitySet="Maj_Req" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maj_Req_Majors_by_University" Association="VAS_2Model.Store.FK_Maj_Req_Majors_by_University">
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+      <End Role="Maj_Req" EntitySet="Maj_Req" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_College" Association="VAS_2Model.Store.FK_Majors_by_University_College">
+      <End Role="College" EntitySet="College" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Major_Flowchart" Association="VAS_2Model.Store.FK_Majors_by_University_Major_Flowchart">
+      <End Role="Major_Flowchart" EntitySet="Major_Flowchart" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Majors_Code" Association="VAS_2Model.Store.FK_Majors_by_University_Majors_Code">
+      <End Role="Majors_Code" EntitySet="Majors_Code" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Universities" Association="VAS_2Model.Store.FK_Majors_by_University_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_Universities" Association="VAS_2Model.Store.FK_Majors_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="Majors" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Universities_University_Category" Association="VAS_2Model.Store.FK_Universities_University_Category">
+      <End Role="University_Category" EntitySet="University_Category" />
+      <End Role="Universities" EntitySet="Universities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Class_List" Association="VAS_2Model.Store.FK_User_Classes_Class_List">
+      <End Role="Class_List" EntitySet="Class_List" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Majors" Association="VAS_2Model.Store.FK_User_Classes_Majors">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Universities" Association="VAS_2Model.Store.FK_User_Classes_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Majors" Association="VAS_2Model.Store.FK_Users_Majors">
+      <End Role="Majors" EntitySet="Majors" />
+      <End Role="UserDetail" EntitySet="UserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Universities" Association="VAS_2Model.Store.FK_Users_Universities">
+      <End Role="Universities" EntitySet="Universities" />
+      <End Role="UserDetail" EntitySet="UserDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Class_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Class_Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Class_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Class_Description" Type="ntext" />
+    <Property Name="Credits" Type="int" />
+    <Property Name="UNIV_ID" Type="int" Nullable="false" />
+    <Property Name="CIP_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="College_ID" Type="int" Nullable="false" />
+    <Property Name="Major_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Class_Review">
+    <Key>
+      <PropertyRef Name="Review_ID" />
+    </Key>
+    <Property Name="Review_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Class_ID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Review" Type="nvarchar(max)" />
+    <Property Name="Posting_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="College">
+    <Key>
+      <PropertyRef Name="College_ID" />
+    </Key>
+    <Property Name="College_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="College_Name_General" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="UNIV_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Internships">
+    <Key>
+      <PropertyRef Name="Internship_ID" />
+    </Key>
+    <Property Name="Internship_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Internship_Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Time_Frame" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pay" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Requirements" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Maj_Req">
+    <Key>
+      <PropertyRef Name="Maj_Req_ID" />
+    </Key>
+    <Property Name="Maj_Req_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Degree_ID" Type="int" Nullable="false" />
+    <Property Name="Class_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Major_Flowchart">
+    <Key>
+      <PropertyRef Name="Chart_ID" />
+    </Key>
+    <Property Name="Chart_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="fileName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="contentType" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="file" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Majors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MajorName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CollegeID" Type="int" Nullable="false" />
+    <Property Name="DegreeTypes" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIV_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Majors_by_University">
+    <Key>
+      <PropertyRef Name="Degree_ID" />
+    </Key>
+    <Property Name="Degree_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UNIV_ID" Type="int" Nullable="false" />
+    <Property Name="CIP_Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="College_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="College_ID" Type="int" />
+    <Property Name="Chart_ID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Majors_Code">
+    <Key>
+      <PropertyRef Name="CIP_Code" />
+    </Key>
+    <Property Name="CIP_Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Major_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Universities">
+    <Key>
+      <PropertyRef Name="UNIV_ID" />
+    </Key>
+    <Property Name="UNIV_ID" Type="int" Nullable="false" />
+    <Property Name="UNIV_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="UNIV_Alias" Type="nvarchar" MaxLength="255" />
+    <Property Name="UNIV_Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="UNIV_City" Type="nvarchar" MaxLength="255" />
+    <Property Name="UNIV_State" Type="nvarchar" MaxLength="255" />
+    <Property Name="UNIV_ZIP" Type="nvarchar" MaxLength="255" />
+    <Property Name="UNIV_Phone" Type="nvarchar" MaxLength="24" />
+    <Property Name="UNIV_URL" Type="nvarchar" MaxLength="255" />
+    <Property Name="In_State_Tuition" Type="int" />
+    <Property Name="Out_State_Tuition" Type="int" />
+    <Property Name="Category_ID" Type="int" />
+    <Property Name="Cname" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="University_Category">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Name="Category_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="User_Classes">
+    <Key>
+      <PropertyRef Name="User_Class_ID" />
+    </Key>
+    <Property Name="User_Class_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Class_ID" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="Grade_Points" Type="float" />
+    <Property Name="Review_ID" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rating" Type="int" />
+    <Property Name="Review" Type="nvarchar(max)" />
+    <Property Name="Posting_Date" Type="date" />
+    <Property Name="UNIV_ID" Type="int" />
+    <Property Name="Major_ID" Type="int" />
+    <Property Name="User_Name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="User_Images">
+    <Key>
+      <PropertyRef Name="User_Image_ID" />
+    </Key>
+    <Property Name="User_Image_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="fileName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="contentType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="file" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="First_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Last_Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PW" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Level_of_Education" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIV_ID" Type="int" />
+    <Property Name="Major_ID" Type="int" />
+    <Property Name="User_Image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="Goal" Type="nvarchar" MaxLength="255" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserImages">
+    <Key>
+      <PropertyRef Name="User_Image_ID" />
+    </Key>
+    <Property Name="User_Image_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="fileName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="contentType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="file" Type="image" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Class_List_College">
+    <End Role="College" Type="VAS_2Model.Store.College" Multiplicity="1" />
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="College">
+        <PropertyRef Name="College_ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="College_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Majors">
+    <End Role="Majors" Type="VAS_2Model.Store.Majors" Multiplicity="0..1" />
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Majors_Code">
+    <End Role="Majors_Code" Type="VAS_2Model.Store.Majors_Code" Multiplicity="0..1" />
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_Code">
+        <PropertyRef Name="CIP_Code" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="CIP_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="1" />
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_College_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="1" />
+    <End Role="College" Type="VAS_2Model.Store.College" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="College">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maj_Req_Class_List">
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="1" />
+    <End Role="Maj_Req" Type="VAS_2Model.Store.Maj_Req" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class_List">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Maj_Req">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maj_Req_Majors_by_University">
+    <End Role="Majors_by_University" Type="VAS_2Model.Store.Majors_by_University" Multiplicity="1" />
+    <End Role="Maj_Req" Type="VAS_2Model.Store.Maj_Req" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_by_University">
+        <PropertyRef Name="Degree_ID" />
+      </Principal>
+      <Dependent Role="Maj_Req">
+        <PropertyRef Name="Degree_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_College">
+    <End Role="College" Type="VAS_2Model.Store.College" Multiplicity="0..1" />
+    <End Role="Majors_by_University" Type="VAS_2Model.Store.Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="College">
+        <PropertyRef Name="College_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="College_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Major_Flowchart">
+    <End Role="Major_Flowchart" Type="VAS_2Model.Store.Major_Flowchart" Multiplicity="0..1" />
+    <End Role="Majors_by_University" Type="VAS_2Model.Store.Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major_Flowchart">
+        <PropertyRef Name="Chart_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="Chart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Majors_Code">
+    <End Role="Majors_Code" Type="VAS_2Model.Store.Majors_Code" Multiplicity="1" />
+    <End Role="Majors_by_University" Type="VAS_2Model.Store.Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_Code">
+        <PropertyRef Name="CIP_Code" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="CIP_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="1" />
+    <End Role="Majors_by_University" Type="VAS_2Model.Store.Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="1" />
+    <End Role="Majors" Type="VAS_2Model.Store.Majors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Majors">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Universities_University_Category">
+    <End Role="University_Category" Type="VAS_2Model.Store.University_Category" Multiplicity="0..1" />
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University_Category">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="Universities">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Class_List">
+    <End Role="Class_List" Type="VAS_2Model.Store.Class_List" Multiplicity="1" />
+    <End Role="User_Classes" Type="VAS_2Model.Store.User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class_List">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Majors">
+    <End Role="Majors" Type="VAS_2Model.Store.Majors" Multiplicity="0..1" />
+    <End Role="User_Classes" Type="VAS_2Model.Store.User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="0..1" />
+    <End Role="User_Classes" Type="VAS_2Model.Store.User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Majors">
+    <End Role="Majors" Type="VAS_2Model.Store.Majors" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="VAS_2Model.Store.UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Universities">
+    <End Role="Universities" Type="VAS_2Model.Store.Universities" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="VAS_2Model.Store.UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universities">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="classCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="className" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClassDescription" Type="ntext" Mode="In" />
+    <Parameter Name="Credits" Type="int" Mode="In" />
+    <Parameter Name="UniversityID" Type="int" Mode="In" />
+    <Parameter Name="CollegeID" Type="int" Mode="In" />
+    <Parameter Name="CIP_Code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddMajor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MajorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CollegeName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DegreeTypes" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="addUserClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClassID" Type="varchar" Mode="In" />
+    <Parameter Name="Grade" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="Rating" Type="int" Mode="In" />
+    <Parameter Name="Review" Type="varchar" Mode="In" />
+    <Parameter Name="UnivID" Type="int" Mode="In" />
+    <Parameter Name="DegreeID" Type="int" Mode="In" />
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="collegesByUniv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Uname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="coursesByMajor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="majorName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="majorsByCollege" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="collegeName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="updateUserDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="UnivName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DegreeName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Goal" Type="nvarchar" Mode="In" />
+    <Parameter Name="LevelOfEd" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

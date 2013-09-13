@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VAS_2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VAS_2Entities" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="addUserClass">
+      <Parameter Name="ClassID" Mode="In" Type="String" />
+      <Parameter Name="Grade" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Rating" Mode="In" Type="Int32" />
+      <Parameter Name="Review" Mode="In" Type="String" />
+      <Parameter Name="UnivID" Mode="In" Type="Int32" />
+      <Parameter Name="DegreeID" Mode="In" Type="Int32" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="collegesByUniv" ReturnType="Collection(String)">
+      <Parameter Name="Uname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="coursesByMajor" ReturnType="Collection(String)">
+      <Parameter Name="majorName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="majorsByCollege" ReturnType="Collection(String)">
+      <Parameter Name="collegeName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="AddClass">
+      <Parameter Name="classCode" Mode="In" Type="String" />
+      <Parameter Name="className" Mode="In" Type="String" />
+      <Parameter Name="ClassDescription" Mode="In" Type="String" />
+      <Parameter Name="Credits" Mode="In" Type="Int32" />
+      <Parameter Name="UniversityID" Mode="In" Type="Int32" />
+      <Parameter Name="CollegeID" Mode="In" Type="Int32" />
+      <Parameter Name="CIP_Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddMajor">
+      <Parameter Name="MajorName" Mode="In" Type="String" />
+      <Parameter Name="CollegeName" Mode="In" Type="String" />
+      <Parameter Name="DegreeTypes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getImage" ReturnType="Collection(VAS_2Model.sp_getImage_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="updateUserDetail">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="UnivName" Mode="In" Type="String" />
+      <Parameter Name="DegreeName" Mode="In" Type="String" />
+      <Parameter Name="Goal" Mode="In" Type="String" />
+      <Parameter Name="LevelOfEd" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Class_List" EntityType="VAS_2Model.Class_List" />
+    <EntitySet Name="Class_Review" EntityType="VAS_2Model.Class_Review" />
+    <EntitySet Name="Colleges" EntityType="VAS_2Model.College" />
+    <EntitySet Name="Internships" EntityType="VAS_2Model.Internship" />
+    <EntitySet Name="Maj_Req" EntityType="VAS_2Model.Maj_Req" />
+    <EntitySet Name="Major_Flowchart" EntityType="VAS_2Model.Major_Flowchart" />
+    <EntitySet Name="Majors" EntityType="VAS_2Model.Major" />
+    <EntitySet Name="Majors_by_University" EntityType="VAS_2Model.Majors_by_University" />
+    <EntitySet Name="Majors_Code" EntityType="VAS_2Model.Majors_Code" />
+    <EntitySet Name="sysdiagrams" EntityType="VAS_2Model.sysdiagram" />
+    <EntitySet Name="Universities" EntityType="VAS_2Model.University" />
+    <EntitySet Name="University_Category" EntityType="VAS_2Model.University_Category" />
+    <EntitySet Name="User_Classes" EntityType="VAS_2Model.User_Classes" />
+    <EntitySet Name="User_Images" EntityType="VAS_2Model.User_Images" />
+    <EntitySet Name="UserDetails" EntityType="VAS_2Model.UserDetail" />
+    <EntitySet Name="UserImages" EntityType="VAS_2Model.UserImage" />
+    <AssociationSet Name="FK_Class_List_College" Association="VAS_2Model.FK_Class_List_College">
+      <End Role="College" EntitySet="Colleges" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Majors" Association="VAS_2Model.FK_Class_List_Majors">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Majors_Code" Association="VAS_2Model.FK_Class_List_Majors_Code">
+      <End Role="Majors_Code" EntitySet="Majors_Code" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_List_Universities" Association="VAS_2Model.FK_Class_List_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Class_List" EntitySet="Class_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maj_Req_Class_List" Association="VAS_2Model.FK_Maj_Req_Class_List">
+      <End Role="Class_List" EntitySet="Class_List" />
+      <End Role="Maj_Req" EntitySet="Maj_Req" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Class_List" Association="VAS_2Model.FK_User_Classes_Class_List">
+      <End Role="Class_List" EntitySet="Class_List" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_College_Universities" Association="VAS_2Model.FK_College_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="College" EntitySet="Colleges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_College" Association="VAS_2Model.FK_Majors_by_University_College">
+      <End Role="College" EntitySet="Colleges" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maj_Req_Majors_by_University" Association="VAS_2Model.FK_Maj_Req_Majors_by_University">
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+      <End Role="Maj_Req" EntitySet="Maj_Req" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Major_Flowchart" Association="VAS_2Model.FK_Majors_by_University_Major_Flowchart">
+      <End Role="Major_Flowchart" EntitySet="Major_Flowchart" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_Universities" Association="VAS_2Model.FK_Majors_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Major" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Majors" Association="VAS_2Model.FK_User_Classes_Majors">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Majors" Association="VAS_2Model.FK_Users_Majors">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Majors_Code" Association="VAS_2Model.FK_Majors_by_University_Majors_Code">
+      <End Role="Majors_Code" EntitySet="Majors_Code" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Majors_by_University_Universities" Association="VAS_2Model.FK_Majors_by_University_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="Majors_by_University" EntitySet="Majors_by_University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Universities_University_Category" Association="VAS_2Model.FK_Universities_University_Category">
+      <End Role="University_Category" EntitySet="University_Category" />
+      <End Role="University" EntitySet="Universities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Classes_Universities" Association="VAS_2Model.FK_User_Classes_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="User_Classes" EntitySet="User_Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Universities" Association="VAS_2Model.FK_Users_Universities">
+      <End Role="University" EntitySet="Universities" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_getImage_Result">
+    <Property Type="Binary" Name="file" Nullable="false" />
+    <Property Type="String" Name="ContentType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="Class_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Class_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Class_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Class_Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Credits" />
+    <Property Type="Int32" Name="UNIV_ID" Nullable="false" />
+    <Property Type="String" Name="CIP_Code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="College_ID" Nullable="false" />
+    <Property Type="Int32" Name="Major_ID" />
+    <NavigationProperty Name="College" Relationship="VAS_2Model.FK_Class_List_College" FromRole="Class_List" ToRole="College" />
+    <NavigationProperty Name="Major" Relationship="VAS_2Model.FK_Class_List_Majors" FromRole="Class_List" ToRole="Major" />
+    <NavigationProperty Name="Majors_Code" Relationship="VAS_2Model.FK_Class_List_Majors_Code" FromRole="Class_List" ToRole="Majors_Code" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_Class_List_Universities" FromRole="Class_List" ToRole="University" />
+    <NavigationProperty Name="Maj_Req" Relationship="VAS_2Model.FK_Maj_Req_Class_List" FromRole="Class_List" ToRole="Maj_Req" />
+    <NavigationProperty Name="User_Classes" Relationship="VAS_2Model.FK_User_Classes_Class_List" FromRole="Class_List" ToRole="User_Classes" />
+  </EntityType>
+  <EntityType Name="Class_Review">
+    <Key>
+      <PropertyRef Name="Review_ID" />
+    </Key>
+    <Property Type="Int32" Name="Review_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Class_ID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="User_ID" Nullable="false" />
+    <Property Type="Int32" Name="Rating" Nullable="false" />
+    <Property Type="String" Name="Review" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Posting_Date" Precision="0" />
+  </EntityType>
+  <EntityType Name="College">
+    <Key>
+      <PropertyRef Name="College_ID" />
+    </Key>
+    <Property Type="Int32" Name="College_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="College_Name_General" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UNIV_ID" Nullable="false" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_Class_List_College" FromRole="College" ToRole="Class_List" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_College_Universities" FromRole="College" ToRole="University" />
+    <NavigationProperty Name="Majors_by_University" Relationship="VAS_2Model.FK_Majors_by_University_College" FromRole="College" ToRole="Majors_by_University" />
+  </EntityType>
+  <EntityType Name="Internship">
+    <Key>
+      <PropertyRef Name="Internship_ID" />
+    </Key>
+    <Property Type="Int32" Name="Internship_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Company_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Internship_Title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Time_Frame" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Pay" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Requirements" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Maj_Req">
+    <Key>
+      <PropertyRef Name="Maj_Req_ID" />
+    </Key>
+    <Property Type="Int32" Name="Maj_Req_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Degree_ID" Nullable="false" />
+    <Property Type="Int32" Name="Class_ID" Nullable="false" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_Maj_Req_Class_List" FromRole="Maj_Req" ToRole="Class_List" />
+    <NavigationProperty Name="Majors_by_University" Relationship="VAS_2Model.FK_Maj_Req_Majors_by_University" FromRole="Maj_Req" ToRole="Majors_by_University" />
+  </EntityType>
+  <EntityType Name="Major_Flowchart">
+    <Key>
+      <PropertyRef Name="Chart_ID" />
+    </Key>
+    <Property Type="Guid" Name="Chart_ID" Nullable="false" />
+    <Property Type="String" Name="fileName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contentType" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="file" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Majors_by_University" Relationship="VAS_2Model.FK_Majors_by_University_Major_Flowchart" FromRole="Major_Flowchart" ToRole="Majors_by_University" />
+  </EntityType>
+  <EntityType Name="Major">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MajorName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CollegeID" Nullable="false" />
+    <Property Type="String" Name="DegreeTypes" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UNIV_ID" Nullable="false" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_Class_List_Majors" FromRole="Major" ToRole="Class_List" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_Majors_Universities" FromRole="Major" ToRole="University" />
+    <NavigationProperty Name="User_Classes" Relationship="VAS_2Model.FK_User_Classes_Majors" FromRole="Major" ToRole="User_Classes" />
+    <NavigationProperty Name="UserDetails" Relationship="VAS_2Model.FK_Users_Majors" FromRole="Major" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="Majors_by_University">
+    <Key>
+      <PropertyRef Name="Degree_ID" />
+    </Key>
+    <Property Type="Int32" Name="Degree_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UNIV_ID" Nullable="false" />
+    <Property Type="String" Name="CIP_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="College_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="College_ID" />
+    <Property Type="Guid" Name="Chart_ID" />
+    <NavigationProperty Name="College" Relationship="VAS_2Model.FK_Majors_by_University_College" FromRole="Majors_by_University" ToRole="College" />
+    <NavigationProperty Name="Maj_Req" Relationship="VAS_2Model.FK_Maj_Req_Majors_by_University" FromRole="Majors_by_University" ToRole="Maj_Req" />
+    <NavigationProperty Name="Major_Flowchart" Relationship="VAS_2Model.FK_Majors_by_University_Major_Flowchart" FromRole="Majors_by_University" ToRole="Major_Flowchart" />
+    <NavigationProperty Name="Majors_Code" Relationship="VAS_2Model.FK_Majors_by_University_Majors_Code" FromRole="Majors_by_University" ToRole="Majors_Code" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_Majors_by_University_Universities" FromRole="Majors_by_University" ToRole="University" />
+  </EntityType>
+  <EntityType Name="Majors_Code">
+    <Key>
+      <PropertyRef Name="CIP_Code" />
+    </Key>
+    <Property Type="String" Name="CIP_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Major_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_Class_List_Majors_Code" FromRole="Majors_Code" ToRole="Class_List" />
+    <NavigationProperty Name="Majors_by_University" Relationship="VAS_2Model.FK_Majors_by_University_Majors_Code" FromRole="Majors_Code" ToRole="Majors_by_University" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="UNIV_ID" />
+    </Key>
+    <Property Type="Int32" Name="UNIV_ID" Nullable="false" />
+    <Property Type="String" Name="UNIV_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_Alias" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_Address" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_City" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_State" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_ZIP" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_Phone" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UNIV_URL" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="In_State_Tuition" />
+    <Property Type="Int32" Name="Out_State_Tuition" />
+    <Property Type="Int32" Name="Category_ID" />
+    <Property Type="String" Name="Cname" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_Class_List_Universities" FromRole="University" ToRole="Class_List" />
+    <NavigationProperty Name="Colleges" Relationship="VAS_2Model.FK_College_Universities" FromRole="University" ToRole="College" />
+    <NavigationProperty Name="Majors" Relationship="VAS_2Model.FK_Majors_Universities" FromRole="University" ToRole="Major" />
+    <NavigationProperty Name="Majors_by_University" Relationship="VAS_2Model.FK_Majors_by_University_Universities" FromRole="University" ToRole="Majors_by_University" />
+    <NavigationProperty Name="University_Category" Relationship="VAS_2Model.FK_Universities_University_Category" FromRole="University" ToRole="University_Category" />
+    <NavigationProperty Name="User_Classes" Relationship="VAS_2Model.FK_User_Classes_Universities" FromRole="University" ToRole="User_Classes" />
+    <NavigationProperty Name="UserDetails" Relationship="VAS_2Model.FK_Users_Universities" FromRole="University" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="University_Category">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Type="Int32" Name="Category_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Category_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Universities" Relationship="VAS_2Model.FK_Universities_University_Category" FromRole="University_Category" ToRole="University" />
+  </EntityType>
+  <EntityType Name="User_Classes">
+    <Key>
+      <PropertyRef Name="User_Class_ID" />
+    </Key>
+    <Property Type="Int32" Name="User_Class_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Class_ID" Nullable="false" />
+    <Property Type="String" Name="Grade" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Grade_Points" />
+    <Property Type="Int32" Name="Review_ID" />
+    <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Rating" />
+    <Property Type="String" Name="Review" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Posting_Date" Precision="0" />
+    <Property Type="Int32" Name="UNIV_ID" />
+    <Property Type="Int32" Name="Major_ID" />
+    <Property Type="String" Name="User_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Class_List" Relationship="VAS_2Model.FK_User_Classes_Class_List" FromRole="User_Classes" ToRole="Class_List" />
+    <NavigationProperty Name="Major" Relationship="VAS_2Model.FK_User_Classes_Majors" FromRole="User_Classes" ToRole="Major" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_User_Classes_Universities" FromRole="User_Classes" ToRole="University" />
+  </EntityType>
+  <EntityType Name="User_Images">
+    <Key>
+      <PropertyRef Name="User_Image_ID" />
+    </Key>
+    <Property Type="Guid" Name="User_Image_ID" Nullable="false" />
+    <Property Type="String" Name="fileName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contentType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="file" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Type="Int32" Name="User_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DOB" Precision="0" />
+    <Property Type="String" Name="First_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PW" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Level_of_Education" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UNIV_ID" />
+    <Property Type="Int32" Name="Major_ID" />
+    <Property Type="String" Name="User_Image_path" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Goal" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Major" Relationship="VAS_2Model.FK_Users_Majors" FromRole="UserDetail" ToRole="Major" />
+    <NavigationProperty Name="University" Relationship="VAS_2Model.FK_Users_Universities" FromRole="UserDetail" ToRole="University" />
+  </EntityType>
+  <EntityType Name="UserImage">
+    <Key>
+      <PropertyRef Name="User_Image_ID" />
+    </Key>
+    <Property Type="Guid" Name="User_Image_ID" Nullable="false" />
+    <Property Type="String" Name="fileName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contentType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="file" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Class_List_College">
+    <End Type="VAS_2Model.College" Role="College" Multiplicity="1" />
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="College">
+        <PropertyRef Name="College_ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="College_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Majors">
+    <End Type="VAS_2Model.Major" Role="Major" Multiplicity="0..1" />
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Majors_Code">
+    <End Type="VAS_2Model.Majors_Code" Role="Majors_Code" Multiplicity="0..1" />
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_Code">
+        <PropertyRef Name="CIP_Code" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="CIP_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_List_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="1" />
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Class_List">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maj_Req_Class_List">
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="1" />
+    <End Type="VAS_2Model.Maj_Req" Role="Maj_Req" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class_List">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Maj_Req">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Class_List">
+    <End Type="VAS_2Model.Class_List" Role="Class_List" Multiplicity="1" />
+    <End Type="VAS_2Model.User_Classes" Role="User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class_List">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_College_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="1" />
+    <End Type="VAS_2Model.College" Role="College" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="College">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_College">
+    <End Type="VAS_2Model.College" Role="College" Multiplicity="0..1" />
+    <End Type="VAS_2Model.Majors_by_University" Role="Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="College">
+        <PropertyRef Name="College_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="College_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maj_Req_Majors_by_University">
+    <End Type="VAS_2Model.Majors_by_University" Role="Majors_by_University" Multiplicity="1" />
+    <End Type="VAS_2Model.Maj_Req" Role="Maj_Req" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_by_University">
+        <PropertyRef Name="Degree_ID" />
+      </Principal>
+      <Dependent Role="Maj_Req">
+        <PropertyRef Name="Degree_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Major_Flowchart">
+    <End Type="VAS_2Model.Major_Flowchart" Role="Major_Flowchart" Multiplicity="0..1" />
+    <End Type="VAS_2Model.Majors_by_University" Role="Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major_Flowchart">
+        <PropertyRef Name="Chart_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="Chart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="1" />
+    <End Type="VAS_2Model.Major" Role="Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Major">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Majors">
+    <End Type="VAS_2Model.Major" Role="Major" Multiplicity="0..1" />
+    <End Type="VAS_2Model.User_Classes" Role="User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Majors">
+    <End Type="VAS_2Model.Major" Role="Major" Multiplicity="0..1" />
+    <End Type="VAS_2Model.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Majors_Code">
+    <End Type="VAS_2Model.Majors_Code" Role="Majors_Code" Multiplicity="1" />
+    <End Type="VAS_2Model.Majors_by_University" Role="Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Majors_Code">
+        <PropertyRef Name="CIP_Code" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="CIP_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Majors_by_University_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="1" />
+    <End Type="VAS_2Model.Majors_by_University" Role="Majors_by_University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="Majors_by_University">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Universities_University_Category">
+    <End Type="VAS_2Model.University_Category" Role="University_Category" Multiplicity="0..1" />
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University_Category">
+        <PropertyRef Name="Category_ID" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Classes_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="0..1" />
+    <End Type="VAS_2Model.User_Classes" Role="User_Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="User_Classes">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Universities">
+    <End Type="VAS_2Model.University" Role="University" Multiplicity="0..1" />
+    <End Type="VAS_2Model.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="UNIV_ID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UNIV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="911a4b70ec404987a701c83eff0e1249" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="VAS_2Model.Class_List" Width="1.5" PointX="4.7723384186496673" PointY="31.145393743713104" />
+        <EntityTypeShape EntityType="VAS_2Model.Class_Review" Width="1.5" PointX="3.3633055311456816" PointY="18.20853579892243" />
+        <EntityTypeShape EntityType="VAS_2Model.College" Width="1.5" PointX="11.224748812254866" PointY="18.330840685558897" />
+        <EntityTypeShape EntityType="VAS_2Model.Internship" Width="1.5" PointX="2.7410815035649954" PointY="0.0904032439414427" />
+        <EntityTypeShape EntityType="VAS_2Model.Maj_Req" Width="1.5" PointX="6.5211820819048123" PointY="21.689158285823257" />
+        <EntityTypeShape EntityType="VAS_2Model.Major_Flowchart" Width="1.5" PointX="5.4138374204811814" PointY="24.867394280092508" />
+        <EntityTypeShape EntityType="VAS_2Model.Major" Width="1.5" PointX="11.604623615557618" PointY="4.0944652427427775" />
+        <EntityTypeShape EntityType="VAS_2Model.Majors_by_University" Width="1.5" PointX="6.7913312962238352" PointY="22.515143851989482" />
+        <EntityTypeShape EntityType="VAS_2Model.Majors_Code" Width="1.5" PointX="7.8440172988195052" PointY="29.738949849148725" />
+        <EntityTypeShape EntityType="VAS_2Model.sysdiagram" Width="1.5" PointX="9.5900607023341866" PointY="5.3987456734286372" />
+        <EntityTypeShape EntityType="VAS_2Model.University" Width="1.5" PointX="8.9608404622230875" PointY="1.5743667341649377" />
+        <EntityTypeShape EntityType="VAS_2Model.University_Category" Width="1.5" PointX="8.8740543652670709" PointY="22.229971106271247" />
+        <EntityTypeShape EntityType="VAS_2Model.User_Classes" Width="1.5" PointX="10.196333621720008" PointY="18.1204317147473" />
+        <EntityTypeShape EntityType="VAS_2Model.User_Images" Width="1.5" PointX="6.136027696605785" PointY="12.826535201085049" />
+        <EntityTypeShape EntityType="VAS_2Model.UserDetail" Width="1.5" PointX="7.93969032538109" PointY="18.505473845873713" />
+        <EntityTypeShape EntityType="VAS_2Model.UserImage" Width="1.5" PointX="10.347480961283427" PointY="2.124286488687753" />
+        <AssociationConnector Association="VAS_2Model.FK_Class_List_College" />
+        <AssociationConnector Association="VAS_2Model.FK_Class_List_Majors" />
+        <AssociationConnector Association="VAS_2Model.FK_Class_List_Majors_Code" />
+        <AssociationConnector Association="VAS_2Model.FK_Class_List_Universities" />
+        <AssociationConnector Association="VAS_2Model.FK_Maj_Req_Class_List" />
+        <AssociationConnector Association="VAS_2Model.FK_User_Classes_Class_List" />
+        <AssociationConnector Association="VAS_2Model.FK_College_Universities" />
+        <AssociationConnector Association="VAS_2Model.FK_Majors_by_University_College" />
+        <AssociationConnector Association="VAS_2Model.FK_Maj_Req_Majors_by_University" />
+        <AssociationConnector Association="VAS_2Model.FK_Majors_by_University_Major_Flowchart" />
+        <AssociationConnector Association="VAS_2Model.FK_Majors_Universities" />
+        <AssociationConnector Association="VAS_2Model.FK_User_Classes_Majors" />
+        <AssociationConnector Association="VAS_2Model.FK_Users_Majors" />
+        <AssociationConnector Association="VAS_2Model.FK_Majors_by_University_Majors_Code" />
+        <AssociationConnector Association="VAS_2Model.FK_Majors_by_University_Universities" />
+        <AssociationConnector Association="VAS_2Model.FK_Universities_University_Category" />
+        <AssociationConnector Association="VAS_2Model.FK_User_Classes_Universities" />
+        <AssociationConnector Association="VAS_2Model.FK_Users_Universities" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

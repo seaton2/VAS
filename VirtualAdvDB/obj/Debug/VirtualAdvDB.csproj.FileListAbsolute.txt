@@ -1,0 +1,39 @@
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll.config
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\bin\Debug\VirtualAdvDB.pdb
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\bin\Debug\EntityFramework.dll
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\bin\Debug\EntityFramework.xml
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\obj\Debug\VirtualAdvDB.csprojResolveAssemblyReference.cache
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\obj\Debug\VirtualAdvDB.dll
+C:\Users\Master\Documents\Visual Studio 2012\Projects\VirtualAdvDB\obj\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\bin\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\bin\Debug\EntityFramework.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\bin\Debug\EntityFramework.xml
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\obj\Debug\VirtualAdvDB.csprojResolveAssemblyReference.cache
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\obj\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\obj\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll.config
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll.config
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\bin\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\bin\Debug\EntityFramework.dll
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\bin\Debug\EntityFramework.xml
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\obj\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\project\VirtualAdvDB\obj\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll.config
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\bin\Debug\EntityFramework.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\bin\Debug\EntityFramework.xml
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.dll
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.pdb
+C:\Users\Ashley\Desktop\SoftwareProject\VirtualAdvisor\Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.csprojResolveAssemblyReference.cache
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll.config
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.dll
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\bin\Debug\VirtualAdvDB.pdb
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\bin\Debug\EntityFramework.dll
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\bin\Debug\EntityFramework.xml
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.csprojResolveAssemblyReference.cache
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.dll
+C:\Users\Gosan\School Stuff\Software Engineering Principles\Final Project\VirtualAdvDB\obj\Debug\VirtualAdvDB.pdb
