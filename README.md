@@ -3,6 +3,18 @@ VAS
 
 VAS (Virtual Advisor System)
 
+A self-advising system which is independent from the Universities, the colleges and the different majors.
+
+Group Members:
+
+ - Andy Michel, Project Manager;
+ - Paul Baertlein, Database Administrator;
+ - Danilo da Silva, UI Developer;
+ - Hernan Leon, Technical Writer;
+ - Ashley Paddock, UI Developer and Technical Lead;
+ - Robert Hofstetter, Technical Writer;
+ - Sean Eaton, UI Developer;
+
 
 VirtualAdvisor is the main project.  
 
