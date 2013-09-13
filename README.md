@@ -14,7 +14,9 @@ Group Members:
  - Ashley Paddock, UI Developer and Technical Lead;
  - Robert Hofstetter, Technical Writer;
  - Sean Eaton, UI Developer;
+______________________________________________________
 
+RUN/SETUP:
 
 VirtualAdvisor is the main project.  
 
